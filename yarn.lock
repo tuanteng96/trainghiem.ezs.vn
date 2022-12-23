@@ -6622,6 +6622,11 @@
   "resolved" "https://registry.npmjs.org/path-type/-/path-type-4.0.0.tgz"
   "version" "4.0.0"
 
+"perfect-scrollbar@^1.5.0", "perfect-scrollbar@1.5.0":
+  "integrity" "sha512-NrNHJn5mUGupSiheBTy6x+6SXCFbLlm8fVZh9moIzw/LgqElN5q4ncR4pbCBCYuCJ8Kcl9mYM0NgDxvW+b4LxA=="
+  "resolved" "https://registry.npmjs.org/perfect-scrollbar/-/perfect-scrollbar-1.5.0.tgz"
+  "version" "1.5.0"
+
 "performance-now@^2.1.0":
   "integrity" "sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns= sha512-7EAHlyLHI56VEIdK57uwHdHKIaAGbnXPiw0yWbarQZOKaKpvUIgW0jWRVLiatnM+XXlSwsanIBH/hzGMJulMow=="
   "resolved" "https://registry.npmjs.org/performance-now/-/performance-now-2.1.0.tgz"
@@ -7276,7 +7281,7 @@
     "react-is" "^16.3.2"
     "warning" "^4.0.0"
 
-"prop-types@^15.6.2", "prop-types@^15.8.1":
+"prop-types@^15.6.1", "prop-types@^15.6.2", "prop-types@^15.8.1":
   "integrity" "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   "version" "15.8.1"
@@ -7424,7 +7429,7 @@
     "strip-ansi" "^6.0.1"
     "text-table" "^0.2.0"
 
-"react-dom@^16.8 || ^17.0 || ^18.0", "react-dom@^18.0.0", "react-dom@^18.1.0", "react-dom@>=16.14.0", "react-dom@>=16.6.0", "react-dom@>=16.8":
+"react-dom@^16.8 || ^17.0 || ^18.0", "react-dom@^18.0.0", "react-dom@^18.1.0", "react-dom@>=16.14.0", "react-dom@>=16.3.3", "react-dom@>=16.6.0", "react-dom@>=16.8":
   "integrity" "sha512-fU1Txz7Budmvamp7bshe4Zi32d0ll7ect+ccxNu9FlObT605GOEB8BfO4tmRJ39R5Zj831VCpvQ05QPBW5yb+w=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.1.0.tgz"
   "version" "18.1.0"
@@ -7466,6 +7471,14 @@
   "integrity" "sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA=="
   "resolved" "https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz"
   "version" "3.0.4"
+
+"react-perfect-scrollbar@1.5.8":
+  "integrity" "sha512-bQ46m70gp/HJtiBOF3gRzBISSZn8FFGNxznTdmTG8AAwpxG1bJCyn7shrgjEvGSQ5FJEafVEiosY+ccER11OSA=="
+  "resolved" "https://registry.npmjs.org/react-perfect-scrollbar/-/react-perfect-scrollbar-1.5.8.tgz"
+  "version" "1.5.8"
+  dependencies:
+    "perfect-scrollbar" "^1.5.0"
+    "prop-types" "^15.6.1"
 
 "react-redux@^7.2.1 || ^8.0.0-beta", "react-redux@^8.0.1":
   "integrity" "sha512-LMZMsPY4DYdZfLJgd7i79n5Kps5N9XVLCJJeWAaPYTV+Eah2zTuBjTxKtNEbjiyitbq80/eIkm55CYSLqAub3w=="
@@ -7564,7 +7577,7 @@
     "loose-envify" "^1.4.0"
     "prop-types" "^15.6.2"
 
-"react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0-rc.1", "react@^16.9.0 || ^17.0.0 || ^18", "react@^18.0.0", "react@^18.1.0", "react@>= 16", "react@>=0.14.0", "react@>=15.0.0", "react@>=16.14.0", "react@>=16.6.0", "react@>=16.8", "react@>=16.8.0":
+"react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0-rc.1", "react@^16.9.0 || ^17.0.0 || ^18", "react@^18.0.0", "react@^18.1.0", "react@>= 16", "react@>=0.14.0", "react@>=15.0.0", "react@>=16.14.0", "react@>=16.3.3", "react@>=16.6.0", "react@>=16.8", "react@>=16.8.0":
   "integrity" "sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.1.0.tgz"
   "version" "18.1.0"

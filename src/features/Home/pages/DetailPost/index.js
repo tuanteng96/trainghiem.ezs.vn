@@ -1,6 +1,12 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import postsApi from 'src/api/posts.api'
+import PerfectScrollbar from 'react-perfect-scrollbar'
+
+const perfectScrollbarOptions = {
+  wheelSpeed: 2,
+  wheelPropagation: false
+}
 
 function DetailPost(props) {
   const { slug } = useParams()
@@ -25,28 +31,36 @@ function DetailPost(props) {
   }
 
   return (
-    <div>
+    <div className="h-100">
       {loading && 'Đang tải'}
       {!loading && (
         <Fragment>
           {Post && (
-            <div>
-              <h2>{Post.title.rendered}</h2>
-              {Post?.acf?.video_youtube && (
-                <div>
-                  <iframe
-                    className="w-100 h-500px"
-                    src={`https://www.youtube.com/embed/${Post?.acf?.video_youtube}`}
-                    title="Video"
-                  ></iframe>
-                </div>
-              )}
-              <div>
-                <div
-                  dangerouslySetInnerHTML={{ __html: Post.content.rendered }}
-                ></div>
+            <Fragment>
+              <div className="title-top">
+                <h3>{Post.title.rendered}</h3>
               </div>
-            </div>
+              <PerfectScrollbar
+                options={perfectScrollbarOptions}
+                className="scroll p-25px view-content"
+                style={{ position: 'relative'}}
+              >
+                {Post?.acf?.video_youtube && (
+                  <div>
+                    <iframe
+                      className="w-100 h-500px"
+                      src={`https://www.youtube.com/embed/${Post?.acf?.video_youtube}`}
+                      title="Video"
+                    ></iframe>
+                  </div>
+                )}
+                <div>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: Post.content.rendered }}
+                  ></div>
+                </div>
+              </PerfectScrollbar>
+            </Fragment>
           )}
         </Fragment>
       )}

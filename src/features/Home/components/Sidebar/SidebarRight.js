@@ -26,6 +26,22 @@ function SidebarRight(props) {
 
   return (
     <div>
+      <div>
+        Nghe tư vấn Online về giải pháp EZS
+        <ul>
+          <li>Nghe toàn bộ</li>
+          <li>Mô hình hệ thống</li>
+          <li>Chức năng cơ bản</li>
+        </ul>
+      </div>
+      <div>
+        <a className="d-block" href="https://ezs.vn/app-khach-hang">
+          App khách hàng có gì
+        </a>
+        <a className="d-block" href="https://ezs.vn/thiet-bi-tich-hop">
+          EZS tích hợp thiết bị gì
+        </a>
+      </div>
       <h3>Tài khoản trải nghiệm</h3>
       <div>
         {loading && 'Đang tải'}
