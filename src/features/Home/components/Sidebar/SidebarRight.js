@@ -1,11 +1,16 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState, useRef } from 'react'
 import postsApi from 'src/api/posts.api'
 import useQuery from 'src/hooks/useQuery'
+import ReactAudioPlayer from 'react-audio-player'
 
 function SidebarRight(props) {
   const [User, setUser] = useState()
   const [loading, setLoading] = useState(false)
   const { id } = useQuery()
+
+  const refMp3 = useRef()
+
+  console.log(refMp3)
 
   useEffect(() => {
     if (id) {
@@ -27,9 +32,25 @@ function SidebarRight(props) {
   return (
     <div>
       <div>
+        <ReactAudioPlayer
+          ref={refMp3}
+          src="https://lienkhucnhac.net/api/music/m4a/bd541447075475120948236146f88433/tuyet-dinh-bolero-chon-loc-dac-biet-moi.m4a"
+          autoPlay
+          controls
+        />
+      </div>
+      <div>
         Nghe tư vấn Online về giải pháp EZS
         <ul>
-          <li>Nghe toàn bộ</li>
+          <li
+            onClick={() => {
+              // if(refMp3?.current.audioEl.current.currentTime) {
+              //   refMp3?.current.audioEl.current.currentTime = 5
+              // }
+            }}
+          >
+            Nghe toàn bộ
+          </li>
           <li>Mô hình hệ thống</li>
           <li>Chức năng cơ bản</li>
         </ul>
