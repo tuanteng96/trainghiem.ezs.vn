@@ -5,6 +5,7 @@ import ReactAudioPlayer from 'react-audio-player'
 import { AssetsHelpers } from 'src/helpers/AssetsHelpers'
 import SVG from 'react-inlinesvg'
 import PerfectScrollbar from 'react-perfect-scrollbar'
+import clsx from 'clsx'
 
 const perfectScrollbarOptions = {
   wheelSpeed: 2,
@@ -13,7 +14,9 @@ const perfectScrollbarOptions = {
 
 function SidebarRight(props) {
   const [User, setUser] = useState()
+  const [InfoMp3, setInfoMp3] = useState()
   const [, setLoading] = useState(false)
+  const [active, setActive] = useState(0)
   const { id } = useQuery()
 
   const audioRef = useRef()
@@ -25,6 +28,8 @@ function SidebarRight(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id])
 
+  useEffect(() => getMp3(), [])
+
   const getDetailPost = () => {
     postsApi
       .getPostID(id)
@@ -35,11 +40,21 @@ function SidebarRight(props) {
       .catch(error => console.log(error))
   }
 
-  const handleAudio = time => {
+  const getMp3 = () => {
+    postsApi
+      .getCateID(15)
+      .then(({ data }) => {
+        setInfoMp3(data)
+      })
+      .catch(error => console.log(error))
+  }
+
+  const handleAudio = (time, index) => {
     if (audioRef.current.audioEl.current) {
       audioRef.current.audioEl.current.pause()
       audioRef.current.audioEl.current.currentTime = time
       audioRef.current.audioEl.current.play()
+      setActive(index)
     }
   }
 
@@ -53,16 +68,32 @@ function SidebarRight(props) {
         <ReactAudioPlayer
           className="w-100"
           ref={audioRef}
-          src="https://lienkhucnhac.net/api/music/m4a/bd541447075475120948236146f88433/tuyet-dinh-bolero-chon-loc-dac-biet-moi.m4a"
+          src={InfoMp3?.acf?.file_mp3}
           autoPlay
           controls
+          controlsList={'nodownload'}
         />
         <div className="controls-video">
           <div className="title">Nghe tư vấn Online về giải pháp EZS</div>
           <ul>
-            <li onClick={() => handleAudio(60)}>1. Nghe toàn bộ</li>
-            <li onClick={() => handleAudio(160)}>2. Mô hình hệ thống</li>
-            <li onClick={() => handleAudio(260)}>3. Chức năng cơ bản</li>
+            <li
+              className={clsx(active === 0 && 'text-danger')}
+              onClick={() => handleAudio(0, 0)}
+            >
+              1. Nghe toàn bộ
+            </li>
+            <li
+              className={clsx(active === 1 && 'text-danger')}
+              onClick={() => handleAudio(InfoMp3?.acf?.mo_hinh_he_thong, 1)}
+            >
+              2. Mô hình hệ thống
+            </li>
+            <li
+              className={clsx(active === 2 && 'text-danger')}
+              onClick={() => handleAudio(InfoMp3?.acf?.chuc_nang_co_ban, 2)}
+            >
+              3. Chức năng cơ bản
+            </li>
           </ul>
         </div>
       </div>

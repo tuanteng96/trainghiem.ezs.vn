@@ -46,17 +46,17 @@ function DetailPost(props) {
           <div className="title-top">
             <h3 className="text-truncate">
               {loading && <Skeleton height={20} width={300} />}
-              {!loading && Post?.title.rendered}
+              {!loading && (
+                <span
+                  dangerouslySetInnerHTML={{ __html: Post?.title.rendered }}
+                ></span>
+              )}
             </h3>
             <div className="btn-menu" onClick={onOpen}>
               <i className="fa-solid fa-bars"></i>
             </div>
           </div>
-          <PerfectScrollbar
-            options={perfectScrollbarOptions}
-            className="scroll p-15px p-md-25px view-content"
-            style={{ position: 'relative' }}
-          >
+          <div className="scroll p-15px p-md-25px view-content">
             {loading && (
               <Fragment>
                 <Skeleton count={5} />
@@ -70,6 +70,12 @@ function DetailPost(props) {
                   className="w-100"
                   src={`https://www.youtube.com/embed/${Post?.acf?.video_youtube}`}
                   title="Video"
+                  wmode="opaque"
+                  salign="tl"
+                  allowscriptaccess="never"
+                  allowfullscreen="true"
+                  scale="scale"
+                  quality="high"
                 ></iframe>
               </div>
             )}
@@ -78,7 +84,7 @@ function DetailPost(props) {
                 dangerouslySetInnerHTML={{ __html: Post?.content.rendered }}
               ></div>
             )}
-          </PerfectScrollbar>
+          </div>
         </Fragment>
       }
     </div>

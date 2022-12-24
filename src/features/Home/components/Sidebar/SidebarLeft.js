@@ -62,9 +62,11 @@ function NavItems({ cate, onChangeCate, CateActive }) {
                 <i className="menu-bullet menu-bullet-dot">
                   <span></span>
                 </i>
-                <span>
-                  {idx + 1}. {item.title.rendered}
-                </span>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: `${idx + 1}. ${item?.title.rendered}`
+                  }}
+                ></span>
               </NavLink>
             </li>
           ))}
@@ -119,7 +121,23 @@ function SidebarLeft(props) {
           >
             Phần Mềm Quản Lý Spa
           </a>
-          để được tư vấn và demo qua Zoom, UltraViewer, ...
+          để được tư vấn và demo qua
+          <a
+            href="https://zoom.us/client/latest/ZoomInstaller.exe"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Zoom
+          </a>
+          ,
+          <a
+            href="https://www.ultraviewer.net/vi/UltraViewer_setup_6.6_vi.exe"
+            target="_blank"
+            rel="noreferrer"
+          >
+            UltraViewer
+          </a>
+          , ...
         </div>
       </div>
     </Fragment>

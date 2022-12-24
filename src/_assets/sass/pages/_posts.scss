@@ -367,7 +367,19 @@
         }
         .view-content {
             height: calc(100% - 50px);
+            overflow: auto;
             border-top: 1px solid #ebedf3;
+            &::-webkit-scrollbar-track {
+                background-color: #fff;
+            }
+            &::-webkit-scrollbar {
+                width: 4px;
+                background-color: #fff;
+            }
+            &::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                background-color: #dee2e6;
+            }
             .videos-ytb {
                 position: relative;
                 padding-top: 56.25%;

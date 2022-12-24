@@ -12,6 +12,9 @@ const postsApi = {
   },
   getListParentCate: id => {
     return http.get(`/wp-json/wp/v2/categories?parent=${id}&per_page=100`)
+  },
+  getCateID: id => {
+    return http.get(`/wp-json/wp/v2/categories/${id}`)
   }
 }
 export default postsApi
