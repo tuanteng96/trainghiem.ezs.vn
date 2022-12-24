@@ -18,6 +18,7 @@
         "react-audio-player": "^0.17.0",
         "react-bootstrap": "^2.3.1",
         "react-dom": "^18.1.0",
+        "react-helmet": "^6.1.0",
         "react-inlinesvg": "^3.0.1",
         "react-loading-skeleton": "^3.1.0",
         "react-perfect-scrollbar": "1.5.8",

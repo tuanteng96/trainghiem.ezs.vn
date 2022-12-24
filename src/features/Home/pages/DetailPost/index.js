@@ -1,8 +1,10 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import postsApi from 'src/api/posts.api'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import Skeleton from 'react-loading-skeleton'
+import { PostsContext } from '../../Home'
+import { Helmet } from 'react-helmet'
 
 const perfectScrollbarOptions = {
   wheelSpeed: 2,
@@ -13,6 +15,9 @@ function DetailPost(props) {
   const { slug } = useParams()
   const [Post, setPost] = useState(null)
   const [loading, setLoading] = useState(false)
+
+  const { onOpen } = useContext(PostsContext)
+
   useEffect(() => {
     getDetailPost()
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -33,17 +38,23 @@ function DetailPost(props) {
 
   return (
     <div className="h-100 bg-white">
+      <Helmet>
+        <title>{loading ? 'Đang tải ...' : Post?.yoast_head_json.title}</title>
+      </Helmet>
       {
         <Fragment>
           <div className="title-top">
-            <h3>
+            <h3 className="text-truncate">
               {loading && <Skeleton height={20} width={300} />}
               {!loading && Post?.title.rendered}
             </h3>
+            <div className="btn-menu" onClick={onOpen}>
+              <i className="fa-solid fa-bars"></i>
+            </div>
           </div>
           <PerfectScrollbar
             options={perfectScrollbarOptions}
-            className="scroll p-25px view-content"
+            className="scroll p-15px p-md-25px view-content"
             style={{ position: 'relative' }}
           >
             {loading && (
@@ -54,9 +65,9 @@ function DetailPost(props) {
               </Fragment>
             )}
             {!loading && Post?.acf?.video_youtube && (
-              <div className='mb-10px'>
+              <div className="mb-10px videos-ytb">
                 <iframe
-                  className="w-100 h-500px"
+                  className="w-100"
                   src={`https://www.youtube.com/embed/${Post?.acf?.video_youtube}`}
                   title="Video"
                 ></iframe>

@@ -48,7 +48,7 @@ function NavItems({ cate, onChangeCate, CateActive }) {
             )}
           />
         </span>
-        <span className='text'>{cate.name}</span>
+        <span className="text">{cate.name}</span>
         <i className="menu-arrow"></i>
       </NavLink>
       <ul>
@@ -106,11 +106,11 @@ function SidebarLeft(props) {
         </ul>
       </PerfectScrollbar>
       <div className="sidebar-footer">
-        <div className='title'>
+        <div className="title">
           <i className="fa-solid fa-circle-info"></i>
           Bạn cần tìm hiểu chức năng khác
         </div>
-        <div className='info'>
+        <div className="info">
           Liên hệ<a href="tel:0981883338">0981.883.338</a>hoặc Fanpage
           <a
             href="https://www.facebook.com/phanmemezs"
