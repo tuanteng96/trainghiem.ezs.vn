@@ -13,11 +13,11 @@ export default function Home() {
   const location = useLocation()
 
   useEffect(() => {
-    if(show) {
+    if (show) {
       onHide()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[location.pathname])
+  }, [location.pathname])
 
   const onOpen = () => {
     setShow(true)
