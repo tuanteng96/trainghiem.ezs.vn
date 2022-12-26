@@ -1,15 +1,9 @@
 import React, { Fragment, useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import postsApi from 'src/api/posts.api'
-import PerfectScrollbar from 'react-perfect-scrollbar'
 import Skeleton from 'react-loading-skeleton'
 import { PostsContext } from '../../Home'
 import { Helmet } from 'react-helmet'
-
-const perfectScrollbarOptions = {
-  wheelSpeed: 2,
-  wheelPropagation: false
-}
 
 function DetailPost(props) {
   const { slug } = useParams()
@@ -73,7 +67,7 @@ function DetailPost(props) {
                   wmode="opaque"
                   salign="tl"
                   allowscriptaccess="never"
-                  allowfullscreen="true"
+                  allowFullScreen={true}
                   scale="scale"
                   quality="high"
                 ></iframe>

@@ -380,6 +380,11 @@
                 border-radius: 10px;
                 background-color: #dee2e6;
             }
+            img {
+                width: 100% !important;
+                height: auto !important;
+                object-fit: cover;
+            }
             .videos-ytb {
                 position: relative;
                 padding-top: 56.25%;
