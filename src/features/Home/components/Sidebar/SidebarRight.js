@@ -94,6 +94,64 @@ function SidebarRight(props) {
             >
               3. Chức năng cơ bản
             </li>
+            <li
+              className={clsx(active === 3 && 'text-danger')}
+              onClick={() => handleAudio(InfoMp3?.acf?.cau_hinh_luong_nv, 3)}
+            >
+              4. Cấu hình lương nhân viên
+            </li>
+            <li
+              className={clsx(active === 4 && 'text-danger')}
+              onClick={() => handleAudio(InfoMp3?.acf?.ky_dien_tu_danh_gia, 4)}
+            >
+              5. Ký điện tử, đánh giá
+            </li>
+            <li
+              className={clsx(active === 5 && 'text-danger')}
+              onClick={() => handleAudio(InfoMp3?.acf?.giai_phap_vi_dien_tu, 5)}
+            >
+              6. Giải pháp ví điện tử
+            </li>
+            <li
+              className={clsx(active === 6 && 'text-danger')}
+              onClick={() => handleAudio(InfoMp3?.acf?.giai_phap_the_tien, 6)}
+            >
+              7. Giải pháp thẻ tiền
+            </li>
+            <li
+              className={clsx(active === 7 && 'text-danger')}
+              onClick={() => handleAudio(InfoMp3?.acf?.affiliate_marketing, 7)}
+            >
+              8. Affiliate Marketing
+            </li>
+            <li
+              className={clsx(active === 8 && 'text-danger')}
+              onClick={() =>
+                handleAudio(InfoMp3?.acf?.telesale_cham_soc_khach_hang, 8)
+              }
+            >
+              9. Telesale & Chăm sóc khách hàng
+            </li>
+            <li
+              className={clsx(active === 9 && 'text-danger')}
+              onClick={() =>
+                handleAudio(InfoMp3?.acf?.kich_hoat_thanh_toan_tu_dong, 9)
+              }
+            >
+              10. Kích hoạt thanh toán tự động
+            </li>
+            <li
+              className={clsx(active === 10 && 'text-danger')}
+              onClick={() => handleAudio(InfoMp3?.acf?.app_khach_hang, 10)}
+            >
+              11. APP khách hàng
+            </li>
+            <li
+              className={clsx(active === 11 && 'text-danger')}
+              onClick={() => handleAudio(InfoMp3?.acf?.website_gioi_thieu, 11)}
+            >
+              12. Website giới thiệu
+            </li>
           </ul>
         </div>
       </div>
