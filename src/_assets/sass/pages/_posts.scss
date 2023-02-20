@@ -435,9 +435,28 @@
     width: 40px;
     text-align: center;
     font-size: 25px;
-    color: #3699ff;
+    color: #F64E60;
+    animation-name: text_nhap_nhay;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-play-state: running;
     @media (min-width: 1201px) {
         display: none;
+    }
+}
+
+@keyframes text_nhap_nhay {
+    0% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 
