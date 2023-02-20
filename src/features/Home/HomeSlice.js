@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import postsApi from 'src/api/posts.api'
 
 export const getListPostsID = createAsyncThunk(
-  '/login',
+  '/list',
   async (id, thunkAPI) => {
     try {
       const { data: ListPosts } = await postsApi.getListPostsID(id)
